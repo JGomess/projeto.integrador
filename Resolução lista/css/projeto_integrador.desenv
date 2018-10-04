@@ -1,0 +1,13 @@
+bola.setX(bola.getX()+dirX);
+bola.setY(bola.getY()+diry);
+
+if (bola.getX()+ bola.getLargura()>= larguraTela){
+dirX *=-1);	
+
+if (bola.getX() <=0){
+	dirX *= -1;
+}
+ 
+if (bola.getY() <=0){
+	dirY *= -1;
+}

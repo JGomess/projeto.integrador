@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exercicio 03</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<div> class="exercicio">
+	<input type="text" name="salario">
+	<input type="text" name="porcentagem">
+	<button onclick="exercicio03()">Calcular</button>
+
+	<div id=""></div>
+
+</div>
+</boday> 
+</html>

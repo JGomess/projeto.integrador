@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exercico 01</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="entradas">
+		<input type="text" name="nota1"id="nota1">
+		<input type="text" name="nota2"id="nota2">
+		<button onclick="calcula()">calcular </button>
+	</div>
+	<div id="saida">
+
+	</div>
+
+	<script type="text/javascript">
+		function calcula() {
+		var nota1;
+		var nota2;
+		var soma; 
+		var media;
+		//pedir que usuarioinforme nota1 e nota2
+		nota1=document.getElementById("nota1").value;
+		nota2=document.getElementById("nota2").value;
+		//somar as notas- transforma em float
+		soma = parseFloat(nota1)+ parseFloat(nota2);
+		console.log("a soma deu "+ soma);
+		//media = dividir a soma por 2
+		media = soma/2;
+		console.log("a media deu" + media);
+		//teste se a media for <7 - reprovado
+		if(media <  7){
+			document.getElementById("saida ").innerHTML =
+			"sua media é: "+ media+" Situaçao: reprovado";
+
+	    
+	     }else{
+		
+		document.getElementById("saida").innerHTML = "Sua media é: "+media +" Situaçao: Aprovado";
+	 }
+
+    }
+</script>  
+</body>
+</html>
