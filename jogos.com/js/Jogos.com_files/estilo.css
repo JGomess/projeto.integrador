@@ -1,0 +1,42 @@
+.menu {
+	background: red;
+
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+}
+
+header ul{
+	display: flex;
+	list-style: none;
+}
+
+header ul li{
+	margin: 5px;
+	padding: 5px;
+}
+
+header ul li a{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+header ul li a:hover{
+	color: black;
+}
+
+main{
+	display: flex;
+	justify-content: center;
+}
+
+footer{
+	display: flex;
+}
+
+footer div{
+	flex-grow: 1;
+}

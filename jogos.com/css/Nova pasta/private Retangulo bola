@@ -1,0 +1,48 @@
+private Retangulo bola
+= new Retangulo(0, 0, 25, 25);
+private int dirX = 3;
+private int dirY = 3;
+@Override
+public void onModuleLoad() {...
+public void update() {
+bola.setX(bola.getX()+dirX);
+bola.setY(bola.getY()+dirY);
+if (bola.getX()+bola.getWidth()>=WIDTH) {
+dirX *= -1;
+}
+if (bola.getX()<=0) {
+dirX *= -1;
+}
+if (bola.getY()<=0) {
+dirY *= -1;
+}
+if (base.colide(bola)) {
+dirY *= -1;
+}
+if (bola.getY()+bola.getHeight()>=HEIGHT)
+ {
+Window.alert("Você Perdeu!");
+bola.setX(0);
+bola.setY(0);
+dirX = Math.abs(dirX);
+dirY = Math.abs(dirY);
+}
+draw();
+}
+public void draw() {
+//desenha fundo
+CssColor cor;
+cor = CssColor.make("rgba(0,50,255,1)");
+context.setFillStyle(cor);
+context.fillRect(0, 0, WIDTH, HEIGHT);
+//desenha bola e base
+cor = CssColor.make("rgba(0,255,50,1)");
+context.setFillStyle(cor);
+context.fillRect(bola.getX(),
+bola.getY(), bola.getWidth(),
+bola.getHeight());
+context.fillRect(base.getX(),
+base.getY(), base.getWidth(),
+base.getHeight());
+}
+}

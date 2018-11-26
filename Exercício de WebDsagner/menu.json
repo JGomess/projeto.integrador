@@ -1,0 +1,18 @@
+var menu = [
+    {
+        "texto": "Início",
+        "link": "index.html"
+    },
+    {
+        "texto":"Jogo",
+        "link:":"produtos.html"
+    },
+    {
+        "texto": "Contato",
+        "link": "contato.html"
+    },
+    {
+        "texto": "Sobre",
+        "link": "sobre.html"
+    }
+]

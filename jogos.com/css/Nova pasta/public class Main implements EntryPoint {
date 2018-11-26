@@ -1,0 +1,51 @@
+public class Main implements EntryPoint {
+...
+private boolean keyLeft = false;
+private boolean keyRight = false;
+@Override
+public void onModuleLoad() {
+...
+ initKeyHandlers();
+ canvas.setFocus(true);
+}
+public void initKeyHandlers() {
+canvas.addKeyDownHandler(
+new KeyDownHandler() {
+@Override
+public void onKeyDown(KeyDownEvent event)
+ {
+ int key = event.getNativeKeyCode();
+ if (key == 37) {
+keyLeft = true;
+ } else if (key == 39) {
+keyRight = true;
+ }
+}
+ });
+ canvas.addKeyUpHandler(
+new KeyUpHandler() {
+@Override
+public void onKeyUp(KeyUpEvent event) {
+ int key = event.getNativeKeyCode();
+ if (key == 37) {
+ keyLeft = false;
+ } else if (key == 39) {
+ keyRight = false;
+ }
+}
+ });
+}
+public void update() {
+...
+if ((keyLeft) && (base.getX()>0)) {
+base.setX(base.getX()-10);
+}
+if ((keyRight) &&
+(base.getX()+base.getWidth()<WIDTH)) {
+base.setX(base.getX()+10);
+}
+draw();
+}
+public void draw() {...
+}
+}

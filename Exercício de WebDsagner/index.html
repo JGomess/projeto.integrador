@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo</title>
+
+
+    <link rel="icon" type="text/css" href="imagem/favicon.png">
+    
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="menu.json"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+
+           
+             
+            menu.forEach(item=>{
+                $("#menu").append( '<li> <a href="'+item.link+'">' + 'Item-' + item.texto + '</a></li>' );
+            })
+
+
+
+            $("#principal").click(function(){
+                var texto = $("#texto").val;
+                $.getJSON("https://mystique-v2-americanas.b2w.io/autocomplete?content=bola&suggestionLimit=7&productLimit=3&source=nanook", function(resposta){
+                    console.log(resposta);
+                })
+        });
+
+        });
+        
+
+    </script>
+
+
+   
+</head>
+<body>
+    <header> Este conteúdo é um exercício de Web Dsagner (Buscando dados do JSON) 
+        <nav>
+            <ul id="menu">
+               
+            </ul>
+        </nav>
+    </header>
+    <input type="text" nome="texto" id="texto">
+    <main id="principal">
+        Conteúdo de teste de Exercício de JOSÉ GOMES do Curso de TSI.
+    </main>
+    <div class="img1">
+       <img src="imagem/logo.jpg" width="500" height="500">
+    </div>
+</body>
+</html>
